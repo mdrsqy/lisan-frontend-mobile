@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import LisanBacground from "@/components/LisanBacground";
 import SignOfTheDay from "@/components/SignOfTheDay";
 import StatsWidget from "@/components/StatsWidget";
 import { ScrollView, View } from "react-native";
@@ -15,6 +16,7 @@ const userData = {
 export default function Index() {
   return (
     <SafeAreaView className="flex-1 bg-white">
+      <LisanBacground />
       <View className="flex-1">
         <ScrollView className="px-5 pt-2">
           {/* header */}

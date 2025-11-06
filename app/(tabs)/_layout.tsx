@@ -1,55 +1,59 @@
 import { icons } from "@/constants/icons";
-import { images } from "@/constants/images";
 import { Tabs } from "expo-router";
 import React from "react";
-import { Image, ImageBackground, Text, View } from "react-native";
+import { Image, View, Text } from "react-native";
 
 const TabIcon = ({ focused, icon, title }: any) => {
-  if (focused) {
-    return (
-      <ImageBackground
-        source={images.highlight}
-        className="flex flex-row w-full flex-1 min-w-[112px] min-h-16 mt-4 justify-center items-center rounded-full overflow-hidden"
-      >
-        <Image source={icon} tintColor="#151312" className="size-5" />
-        <Text className="text-secondary text-base font-semibold ml-2">
-          {title}
-        </Text>
-      </ImageBackground>
-    );
-  }
+  const activeColor = "#2600FF";
+  const inactiveColor = "#C6C6C6";
 
   return (
-    <View className="size-full justify-center items-center mt-4 rounded-full">
-      <Image source={icon} tintColor="#a8b5db" className="size-5" />
+    <View className="items-center justify-center flex-1">
+      {focused ? (
+        <View
+          className="items-center justify-center p-1"
+          style={{ width: 80, height: 75, borderColor: activeColor, borderWidth: 1, borderRadius: 15}}
+        >
+          <Image source={icon} className="size-6" tintColor={activeColor} resizeMode="contain"/>
+          <Text className="text-xs font-semibold mt-1">{title}</Text>
+          <View className="absolute bottom-1 w-10 h-1 rounded-full" style={{ backgroundColor: activeColor }} />
+        </View>
+      ) : (
+        <View className="items-center justify-center py-1" style={{ width: 80, height: 75 }} >
+          <Image source={icon} className="size-6" tintColor={inactiveColor} resizeMode="contain" />
+          <Text className="text-xs mt-1">{title}</Text>
+        </View>
+      )}
     </View>
   );
 };
 
 const _layout = () => {
+  const tabBackgroundColor = "#fff";
   return (
     <Tabs
-    screenOptions={{
+      screenOptions={{
         tabBarShowLabel: false,
         tabBarItemStyle: {
-            width: "100%",
-            height: "100%",
-            justifyContent: "center",
-            alignItems: "center",
+          padding: 1,
+          margin: 20,
+          flex: 1,
         },
         tabBarStyle: {
-            backgroundColor: '#0f0d23',
-            borderRadius: 50,
-            marginHorizontal: 20,
-            marginBottom: 36,
-            height: 52,
-            position:'absolute',
-            overflow: 'hidden',
-            borderWidth: 0,
-            borderColor: '#0f0d23',
-
-        }
-    }}
+          backgroundColor: tabBackgroundColor,
+          borderRadius: 15,
+          marginHorizontal: 20,
+          marginBottom: 20,
+          height: 80,
+          position: "absolute",
+          overflow: "hidden",
+          borderTopWidth: 0,
+          elevation: 5,
+          shadowOffset: { width: 0, height: 4 },
+          shadowOpacity: 0.3,
+          shadowRadius: 4,
+        },
+      }}
     >
       <Tabs.Screen
         name="index"
@@ -67,7 +71,11 @@ const _layout = () => {
           title: "Tantangan",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.tantangan} title="Tantangan" />
+            <TabIcon
+              focused={focused}
+              icon={icons.tantangan}
+              title="Tantangan"
+            />
           ),
         }}
       />
@@ -87,7 +95,11 @@ const _layout = () => {
           title: "Pengaturan",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.pengaturan} title="Pengaturan" />
+            <TabIcon
+              focused={focused}
+              icon={icons.pengaturan}
+              title="Pengaturan"
+            />
           ),
         }}
       />

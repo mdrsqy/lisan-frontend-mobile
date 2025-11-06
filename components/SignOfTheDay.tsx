@@ -1,11 +1,17 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {Text, View } from "react-native";
 
-const SignOfTheDay = ({ sign, gems, hearts }) => {
+interface SignOfTheDayProps {
+  sign: string;
+  gems: number;
+  hearts: number;
+}
+
+const SignOfTheDay: React.FC<SignOfTheDayProps> = ({ sign, gems, hearts }) => {
   return (
     <View className="bg-white p-4 rounded-2xl shadow-xl overflow-hidden">
       <Text className="text-lg font-semibold text-gray-600 mb-3">
-        Kata Isyarat hari ini: <Text className="text-purple-700">"{sign}"</Text>🔊
+        Kata Isyarat hari ini: <Text className="text-purple-700">&quot;{sign}&quot;</Text>🔊
       </Text>
 
       {/* video */}
@@ -31,5 +37,3 @@ const SignOfTheDay = ({ sign, gems, hearts }) => {
 };
 
 export default SignOfTheDay;
-
-const styles = StyleSheet.create({});
