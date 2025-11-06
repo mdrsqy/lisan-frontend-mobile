@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { icons } from "@/constants/icons";
+import React from "react";
+import { Image, Text, View } from "react-native";
 
 const pengaturan = () => {
   return (
-    <View>
-      <Text>pengaturan</Text>
+    <View className="bg-black flex-1 px-10">
+      <View className="flex justify-center items-center flex-1 flex-col gap-5">
+        <Image source={icons.pengaturan} className="size-10" tintColor="#fff" />
+        <Text className="text-gray-500 text-base">Pengaturan</Text>
+      </View>
     </View>
-  )
-}
+  );
+};
 
-export default pengaturan
-
-const styles = StyleSheet.create({})
+export default pengaturan;

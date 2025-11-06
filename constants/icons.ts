@@ -9,6 +9,7 @@ import arrow from "@/assets/icons/arrow.png";
 import tantangan from "@/assets/icons/tantangan.png";
 import teman from "@/assets/icons/teman.png";
 import pengaturan from "@/assets/icons/pengaturan.png";
+import bell from "@/assets/icons/bell.png";
 
 export const icons = {
   home,
@@ -22,4 +23,5 @@ export const icons = {
   tantangan,
   teman,
   pengaturan,
+  bell,
 };

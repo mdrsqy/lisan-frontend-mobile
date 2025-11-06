@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "lisan-mobile-app",
+    "name": "Lisan",
     "slug": "lisan-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -14,9 +14,9 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./assets/icons/logo.png",
+        "backgroundImage": "./assets/icons/logo.png",
+        "monochromeImage": "./assets/icons/logo.png"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
