@@ -10,8 +10,8 @@ const userData = {
   name: "First User",
   dailySign: "Terima Kasih",
   streak: 1,
-  gems: 0,
-  hearts: 0,
+  gems: 19,
+  hearts: 10,
 };
 
 export default function Index() {
