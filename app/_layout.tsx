@@ -13,6 +13,10 @@ export default function RootLayout() {
         name="premium"
         options={{ headerShown: true, title: "Langganan" }}
       />
+      <Stack.Screen
+        name="notifications/[id]"
+        options={{ headerShown: true, title: "Detail pesan" }}
+      />
     </Stack>
   );
 }
