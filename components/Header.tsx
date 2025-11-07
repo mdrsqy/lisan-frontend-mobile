@@ -1,8 +1,13 @@
 import { icons } from "@/constants/icons";
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
-const Header = ({ userName }) => {
+interface HeaderProps {
+  userName: string;
+  onNotificationPress: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ userName, onNotificationPress }) => {
   return (
     <View className="flex-row justify-between items-center mb-4">
       <View>
@@ -10,7 +15,10 @@ const Header = ({ userName }) => {
           Halo, <Text className="text-purple-700">{userName}</Text>
         </Text>
       </View>
-      <TouchableOpacity className="p-3 bg-white rounded-full shadow-md border border-gray-200">
+      <TouchableOpacity
+        onPress={onNotificationPress}
+        className="p-3 bg-white rounded-full shadow-md border border-gray-200"
+      >
         <Image source={icons.bell} />
       </TouchableOpacity>
     </View>
@@ -18,5 +26,3 @@ const Header = ({ userName }) => {
 };
 
 export default Header;
-
-const styles = StyleSheet.create({});
