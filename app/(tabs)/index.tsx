@@ -30,7 +30,7 @@ export default function Index() {
   };
 
   const upgradePress = () => {
-    router.push("/upgrade");
+    router.push("/premium");
   };
 
   return (
