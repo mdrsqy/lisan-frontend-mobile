@@ -29,15 +29,14 @@ const Profile = () => {
   };
 
   const handleProfile = () => {
-    // router.push("/settings/profile");
-    alert("Coming Soon ...");
+    router.push("/profile/infoProfil");
   };
 
   return (
     <SafeAreaView className="flex-1 bg-white" edges={["bottom"]}>
       <ScrollView>
         <View className="px-5 pt-7" style={{ backgroundColor: primaryOrange }}>
-          <TouchableOpacity onPress={() => router.back()}>
+          <TouchableOpacity onPress={() => router.push("/(tabs)/pengaturan")}>
             <Text className="text-4xl font-extrabold text-gray-700">←</Text>
           </TouchableOpacity>
         </View>

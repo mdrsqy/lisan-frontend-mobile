@@ -9,17 +9,22 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Aplikasi LISAN memerlukan akses kamera untuk menganalisis gerakan isyarat Anda secara real-time saat sesi latihan.",
+        "NSMicrophoneUsageDescription": "LISAN memerlukan akses mikrofon untuk menerjemahkan suara menjadi bahasa isyarat di mode komunikasi dua arah."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/icons/logo.png",
-        "backgroundImage": "./assets/icons/logo.png",
-        "monochromeImage": "./assets/icons/logo.png"
+        "foregroundImage": "./assets/icons/logo.png"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.lisan.app"
     },
     "web": {
       "output": "static",
@@ -37,6 +42,13 @@
           "dark": {
             "backgroundColor": "#000000"
           }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Aplikasi LISAN memerlukan akses kamera untuk tantangan huruf.",
+          "microphonePermission": "LISAN memerlukan akses mikrofon untuk mode komunikasi dua arah."
         }
       ],
       "expo-video"

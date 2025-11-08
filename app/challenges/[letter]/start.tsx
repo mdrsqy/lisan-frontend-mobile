@@ -1,10 +1,10 @@
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Start = () => {
-  // const router = useRouter();
+  const router = useRouter();
   const params = useLocalSearchParams();
   const letter = params.letter as string;
 
@@ -16,8 +16,7 @@ const Start = () => {
   };
 
   const handleMulai = () => {
-    // router.push(`/challenges/${letter}/start` as any);
-    alert("Coming Soon ...");
+    router.push(`/challenges/${letter}/camera` as any);
   };
 
   const DetailRow = ({

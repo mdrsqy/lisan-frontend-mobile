@@ -45,6 +45,10 @@ export default function RootLayout() {
         name="settings/profile"
         options={{ headerShown: false, title: "profile"}}
       />
+      <Stack.Screen
+        name="profile/infoProfil"
+        options={{ headerShown: true, title: "Profile"}}
+      />
     </Stack>
   );
 }
