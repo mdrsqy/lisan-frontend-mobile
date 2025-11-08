@@ -16,12 +16,12 @@ const Pengaturan = () => {
     profilePic: "https://via.placeholder.com/150/0000FF/808080?Text=User",
   };
 
-  // PERBAIKAN: Definisikan tipe 'path' sebagai string
   const navigateTo = (path: string) => router.push(path as any);
 
   const handleLogout = () => {
     alert("Berhasil Logout");
   };
+
 
   const MenuItem = ({
     icon,
@@ -38,7 +38,6 @@ const Pengaturan = () => {
   }) => (
     <TouchableOpacity
       className="flex-row items-center bg-white p-4 border-b border-gray-100"
-      // Tambahkan pemeriksaan path karena TypeScript memerlukan argumen string
       onPress={action || (path ? () => navigateTo(path) : undefined)}
     >
       <View className="mr-4">
@@ -100,7 +99,7 @@ const Pengaturan = () => {
           <MenuItem
             icon="🔔"
             title="Pemberitahuan"
-            path="/settings/pemberitahuan"
+            path="/notifications"
           />
         </View>
 
@@ -123,7 +122,7 @@ const Pengaturan = () => {
           <MenuItem
             icon="🗑️"
             title="Hapus Akun"
-            isDestructive={true} // Warna merah untuk aksi berbahaya
+            isDestructive={true}
             path="/settings/deleteAccount"
           />
           <MenuItem

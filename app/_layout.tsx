@@ -29,6 +29,22 @@ export default function RootLayout() {
         name="challenges/[letter]/start"
         options={{ headerShown: true, title: " "}}
       />
+      <Stack.Screen
+        name="settings/deleteAccount"
+        options={{ headerShown: true, title: "Hapus Akun"}}
+      />
+      <Stack.Screen
+        name="settings/privacy"
+        options={{ headerShown: false, title: "Hapus Akun"}}
+      />
+      <Stack.Screen
+        name="settings/help"
+        options={{ headerShown: true, title: "Bantuan & Dukungan"}}
+      />
+      <Stack.Screen
+        name="settings/profile"
+        options={{ headerShown: false, title: "profile"}}
+      />
     </Stack>
   );
 }
