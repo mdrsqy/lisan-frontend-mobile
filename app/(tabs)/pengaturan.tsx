@@ -20,7 +20,7 @@ const Pengaturan = () => {
   const navigateTo = (path: string) => router.push(path as any);
 
   const handleLogout = () => {
-    alert("Berhasil Logout");
+    router.push("/(auth)" as any);
   };
 
 
