@@ -49,6 +49,10 @@ export default function RootLayout() {
         name="profile/infoProfil"
         options={{ headerShown: true, title: "Profile"}}
       />
+      <Stack.Screen
+        name="users/[id]"
+        options={{ headerShown: false, title: "user"}}
+      />
     </Stack>
   );
 }

@@ -1,3 +1,4 @@
+import LisanBacground from "@/components/LisanBacground";
 import { useRouter } from "expo-router";
 import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
@@ -59,6 +60,8 @@ const Pengaturan = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-white" edges={["bottom"]}>
+      <LisanBacground />
+      
       <ScrollView>
         {/* header */}
         <View

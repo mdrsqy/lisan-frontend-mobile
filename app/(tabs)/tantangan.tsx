@@ -1,5 +1,6 @@
 import ChallengeCard from "@/components/ChallengeCard";
 import Header from "@/components/Header";
+import LisanBacground from "@/components/LisanBacground";
 import StreakCalendar from "@/components/StreakCalendar";
 import { icons } from "@/constants/icons";
 import { useRouter } from "expo-router";
@@ -34,6 +35,7 @@ const Tantangan = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-white">
+      <LisanBacground />
       <ScrollView className="px-5 pt-2">
         {/* header */}
         <Header userName={userData.name} onNotificationPress={notifPress} />

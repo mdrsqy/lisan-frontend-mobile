@@ -1,7 +1,8 @@
 import { icons } from "@/constants/icons";
+import { BlurView } from "expo-blur";
 import { Tabs } from "expo-router";
 import React from "react";
-import { Image, View, Text } from "react-native";
+import { Image, Text, View } from "react-native";
 
 const TabIcon = ({ focused, icon, title }: any) => {
   const activeColor = "#2600FF";
@@ -12,15 +13,37 @@ const TabIcon = ({ focused, icon, title }: any) => {
       {focused ? (
         <View
           className="items-center justify-center p-1"
-          style={{ width: 80, height: 75, borderColor: activeColor, borderWidth: 1, borderRadius: 15}}
+          style={{
+            width: 80,
+            height: 75,
+            borderColor: activeColor,
+            borderWidth: 1,
+            borderRadius: 15,
+          }}
         >
-          <Image source={icon} className="size-6" tintColor={activeColor} resizeMode="contain"/>
+          <Image
+            source={icon}
+            className="size-6"
+            tintColor={activeColor}
+            resizeMode="contain"
+          />
           <Text className="text-xs font-semibold mt-1">{title}</Text>
-          <View className="absolute bottom-1 w-10 h-1 rounded-full" style={{ backgroundColor: activeColor }} />
+          <View
+            className="absolute bottom-1 w-10 h-1 rounded-full"
+            style={{ backgroundColor: activeColor }}
+          />
         </View>
       ) : (
-        <View className="items-center justify-center py-1" style={{ width: 80, height: 75 }} >
-          <Image source={icon} className="size-6" tintColor={inactiveColor} resizeMode="contain" />
+        <View
+          className="items-center justify-center py-1"
+          style={{ width: 80, height: 75 }}
+        >
+          <Image
+            source={icon}
+            className="size-6"
+            tintColor={inactiveColor}
+            resizeMode="contain"
+          />
           <Text className="text-xs mt-1">{title}</Text>
         </View>
       )}
@@ -29,7 +52,6 @@ const TabIcon = ({ focused, icon, title }: any) => {
 };
 
 const _layout = () => {
-  const tabBackgroundColor = "#fff";
   return (
     <Tabs
       screenOptions={{
@@ -40,19 +62,33 @@ const _layout = () => {
           flex: 1,
         },
         tabBarStyle: {
-          backgroundColor: tabBackgroundColor,
+          // backgroundColor: tabBackgroundColor,
+          // borderRadius: 15,
+          // marginHorizontal: 20,
+          // marginBottom: 20,
+          // height: 80,
+          // position: "absolute",
+          // overflow: "hidden",
+          // borderTopWidth: 0,
+          // elevation: 5,
+          // shadowOffset: { width: 0, height: 4 },
+          // shadowOpacity: 0.3,
+          // shadowRadius: 4,
+          position: "absolute",
+          backgroundColor: "rgba(255, 255, 255, 0.2)", // semi transparan
           borderRadius: 15,
           marginHorizontal: 20,
           marginBottom: 20,
           height: 80,
-          position: "absolute",
           overflow: "hidden",
           borderTopWidth: 0,
-          elevation: 5,
-          shadowOffset: { width: 0, height: 4 },
-          shadowOpacity: 0.3,
-          shadowRadius: 4,
+          elevation: 0,
         },
+        tabBarBackground: () => (
+          <View style={{ flex: 1, overflow: "hidden", borderRadius: 15 }}>
+            <BlurView intensity={90} tint="light" style={{ flex: 1 }} />
+          </View>
+        ),
       }}
     >
       <Tabs.Screen
